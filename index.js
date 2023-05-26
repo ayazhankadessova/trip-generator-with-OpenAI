@@ -1,4 +1,4 @@
-import { process } from '/env'
+import { process } from '/env.js'
 const setupTextarea = document.getElementById('setup-textarea')
 const setupInputContainer = document.getElementById('setup-input-container')
 const businessBossText = document.getElementById('business-boss-text')
