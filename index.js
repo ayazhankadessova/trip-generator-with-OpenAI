@@ -39,7 +39,7 @@ TODO:
       Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      model: 'text-davinci-003',
+      model: 'gpt-3.5-turbo-0301',
       prompt: 'Give me and enthusiastic response in no more than 5 words.',
     }),
   })
