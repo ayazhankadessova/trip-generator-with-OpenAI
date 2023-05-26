@@ -1,4 +1,6 @@
 import { process } from '/env.js'
+import { Configuration, OpenAIApi } from '/node_modules/openai'
+
 const setupTextarea = document.getElementById('setup-textarea')
 const setupInputContainer = document.getElementById('setup-input-container')
 const businessBossText = document.getElementById('business-boss-text')
@@ -6,8 +8,12 @@ const businessBossText = document.getElementById('business-boss-text')
 /* API vars*/
 // const fetch = require('node-fetch')
 // const apiKey = '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'
-const apiKey = process.env.OPENAI_API_KEY
-const url = 'https://api.openai.com/v1/completions'
+
+/* Using OpenAI Dependency */
+const configuration = new Configuration({
+  apiKey: process.env.OPENAI_API_KEY,
+})
+const openai = new OpenAIApi(configuration)
 
 document.getElementById('send-btn').addEventListener('click', () => {
   //   if (setupTextarea.value) {
@@ -18,7 +24,7 @@ document.getElementById('send-btn').addEventListener('click', () => {
   fetchAIreply()
 })
 
-function fetchAIreply() {
+async function fetchAIreply() {
   /*
 TODO:
   1. Make a fetch request to OpenAi API.
@@ -28,17 +34,16 @@ TODO:
      it's working.
 */
 
-  fetch(url, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${apiKey}`,
-    },
-    body: JSON.stringify({
-      model: 'text-davinci-003',
-      prompt: 'Sound enthusiastic in five words or less.',
-    }),
+  const response = await openai.createCompletion({
+    model: 'text-davinci-003',
+    prompt:
+      'Suggest me a book about feminism, non-fiction, not old.\n\n1. Feminism Is For Everybody: Passionate Politics by Bell Hooks \n2. Badass Feminists: Everyday Revolutionaries Creating Change from the Ground Up edited by Becca and Savanna Leanna\n3. We Should',
+    temperature: 1,
+    max_tokens: 48,
+    top_p: 1,
+    frequency_penalty: 0,
+    presence_penalty: 0,
   })
-    .then((response) => response.json())
-    .then((data) => (businessBossText.innerText = data.choices[0].text))
+
+  console.log(response.data)
 }
