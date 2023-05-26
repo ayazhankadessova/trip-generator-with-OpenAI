@@ -1,8 +1,4 @@
-// if (typeof document !== 'undefined') {
-//   console.log('Running in browser')
-// } else {
-//   console.log('Running in browserwbejdkns')
-// }
+import { process } from '/env'
 
 const setupTextarea = document.getElementById('setup-textarea')
 const setupInputContainer = document.getElementById('setup-input-container')
@@ -10,7 +6,8 @@ const businessBossText = document.getElementById('business-boss-text')
 
 /* API vars*/
 // const fetch = require('node-fetch')
-const apiKey = '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'
+// const apiKey = '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'
+const apiKey = process.env.OPENAI_API_KEY
 const url = 'https://api.openai.com/v1/completions'
 
 document.getElementById('send-btn').addEventListener('click', () => {
