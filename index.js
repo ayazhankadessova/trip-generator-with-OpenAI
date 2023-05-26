@@ -1,5 +1,4 @@
 import { process } from '/env'
-
 const setupTextarea = document.getElementById('setup-textarea')
 const setupInputContainer = document.getElementById('setup-input-container')
 const businessBossText = document.getElementById('business-boss-text')
@@ -36,8 +35,8 @@ TODO:
       Authorization: `Bearer ${apiKey}`,
     },
     body: JSON.stringify({
-      model: 'gpt-3.5-turbo-0301',
-      prompt: 'Give me and enthusiastic response in no more than 5 words.',
+      model: 'text-davinci-003',
+      prompt: 'Sound enthusiastic in five words or less.',
     }),
   })
     .then((response) => response.json())
