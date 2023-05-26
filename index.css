@@ -19,7 +19,7 @@ body {
   font-family: 'Poppins';
   background-size: cover;
   background-repeat: repeat-y;
-  background-image: url('images/bookstore.jpg');
+  background-image: url('images/bookstore_TODO.jpg');
   height: 100vh;
   display: flex;
   flex-direction: column;
