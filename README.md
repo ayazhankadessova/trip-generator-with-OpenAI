@@ -20,7 +20,14 @@ This spins up a Node.js httpd which serves the files in your directory as static
 
 ## GPT MODELs
 
-text-davinci-003 [supports completion]
+text-davinci-003 [supports completion, faster]
 text-curie-001
 text-babbage-001
 text-ada-001
+
+### How to choose a model?
+
+Start with the best available model
+Downgrade to save time & costs where u can
+
+#### Prompt Compare Tool: https://gpttools.com/comparisontool
