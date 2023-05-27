@@ -37,3 +37,29 @@ Downgrade to save time & costs where u can
 3. Good prompt design!
 
 ### Write better prompts
+
+- Zero shot Approach
+
+1. Just an instruction
+2. Fine for many simple instructions
+
+- Few shot Approach [ with examples ]
+
+1. Add one or more examples
+2. Helps the AI understand what you want
+3. Great for more complex tasks
+
+- Add `###` when u are giving diff entities, such as:
+
+`
+_instructions_
+
+###
+
+_Example_
+
+###
+
+_template_
+
+`
