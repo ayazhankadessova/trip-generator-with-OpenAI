@@ -1,7 +1,6 @@
 import { process } from '/env.js'
 import { Configuration, OpenAIApi } from 'openai'
 
-const setupTextarea = document.getElementById('setup-textarea')
 const setupInputContainer = document.getElementById('setup-input-container')
 const businessBossText = document.getElementById('business-boss-text')
 const outputBox = document.getElementById('output-text')
@@ -24,12 +23,14 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 document.getElementById('send-btn').addEventListener('click', () => {
+  const setupTextarea = document.getElementById('setup-textarea')
+
   if (setupTextarea.value) {
     const userInput = setupTextarea.value
     setupInputContainer.innerHTML = `<img src="images/bookSuggest.png" class="loading" id="loading">`
     businessBossText.innerText = `Ok, just wait a second while my digital brain digests that...`
     fetchAIreply(userInput)
-    fetchResult(userInput)
+    // fetchResult(userInput)
   }
 })
 
@@ -47,14 +48,10 @@ TODO:
 */
 async function fetchAIreply(userInput) {
   /*
-1. Refactor this prompt to use examples of an outline and an 
+1. Use examples of an preferences and an 
    enthusiastic response. Be sure to keep the length of your 
    examples reasonably short, say 20 words or so.
 */
-  //   let travelPartner = 'friends-friendly'
-  //   let budget = '30,000 HKD'
-  //   //   let area = 'Europe'
-  //   let days = '7'
 
   const response = await openai.createCompletion({
     model: 'text-davinci-003',
