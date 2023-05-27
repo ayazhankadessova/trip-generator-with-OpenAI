@@ -63,9 +63,34 @@ async function fetchAIreply(userInput) {
 
     */
 async function fetchResult(userInput) {
+  let travelPartner = 'friends-friendly'
+  let budget = '30,000 HKD'
+  //   let area = 'Europe'
+  let days = '7'
+
   const response = await openai.createCompletion({
     model: 'text-davinci-003',
-    prompt: `Give me a travel idea plan based on the budget and preferences of the user: ${userInput}. `,
+    prompt: `Give me a travel idea plan based on the budget and preferences of the user.
+    
+    ###
+    Budget: 12,000 HKD
+    Preferences: beach holiday; family-friendly, Europe
+    Days: 7
+    Destination Idea: Algarve, Portugal.
+    Activities for 7 days: 
+    - Day 1: Fly to Faro, Algarve with budget airlines or discounted flights.\n
+    - Day 2: Stay in family-friendly resorts or apartments near the beach in Albufeira or Lagos.\n
+    - Day 3: Explore stunning beaches like Praia da Marinha and Praia da Rocha.\n
+    - Day 4; Visit water parks like Slide & Splash and Aqualand Algarve for a fun day.\n
+    - Day 5: Take boat trips to explore hidden caves and enjoy dolphin watching.\n
+    - Day 6: Discover historic towns like Faro, Lagos, and Tavira for cultural excursions\n
+    - Day 7: Consider dining at local eateries and trying street food to save on expenses.\n
+    ###
+    Budget: ${budget}
+    Preferences: ${travelPartner}; ${userInput}
+    Days: ${days}
+    Destination Idea and Activities for ${days} days:
+    `,
     temperature: 1,
     max_tokens: 700,
     top_p: 0.7,
