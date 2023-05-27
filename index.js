@@ -50,3 +50,6 @@ async function fetchAIreply(userInput) {
   console.log(response)
   businessBossText.innerText = response.data.choices[0].text.trim()
 }
+
+/* check what result we are getting and modifing it */
+async function fetchResult(userInput) {}
