@@ -4,6 +4,7 @@ import { Configuration, OpenAIApi } from 'openai'
 const setupTextarea = document.getElementById('setup-textarea')
 const setupInputContainer = document.getElementById('setup-input-container')
 const businessBossText = document.getElementById('business-boss-text')
+const outputBox = document.getElementById('output-text')
 
 /* API vars*/
 // const fetch = require('node-fetch')
@@ -21,6 +22,7 @@ document.getElementById('send-btn').addEventListener('click', () => {
     setupInputContainer.innerHTML = `<img src="images/bookSuggest.png" class="loading" id="loading">`
     businessBossText.innerText = `Ok, just wait a second while my digital brain digests that...`
     fetchAIreply(userInput)
+    fetchResult(userInput)
   }
 })
 
@@ -52,4 +54,25 @@ async function fetchAIreply(userInput) {
 }
 
 /* check what result we are getting and modifing it */
-async function fetchResult(userInput) {}
+
+/* TODO 
+
+  1. Set up an API call with model, prompt, and max_tokens properties.
+  2. The prompt should ask for a synopsis for a movie based on the 
+    outline supplied by the user.
+
+    */
+async function fetchResult(userInput) {
+  const response = await openai.createCompletion({
+    model: 'text-davinci-003',
+    prompt: `Give me a travel idea plan based on the budget and preferences of the user: ${userInput}. `,
+    temperature: 1,
+    max_tokens: 60,
+    top_p: 0.7,
+    frequency_penalty: 0,
+    presence_penalty: 0,
+  })
+
+  console.log(response)
+  outputBox.innerHTML = response.data.choices[0].text.trim()
+}
