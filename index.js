@@ -67,7 +67,7 @@ async function fetchResult(userInput) {
     model: 'text-davinci-003',
     prompt: `Give me a travel idea plan based on the budget and preferences of the user: ${userInput}. `,
     temperature: 1,
-    max_tokens: 60,
+    max_tokens: 700,
     top_p: 0.7,
     frequency_penalty: 0,
     presence_penalty: 0,
