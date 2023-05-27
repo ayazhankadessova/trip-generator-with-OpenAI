@@ -35,3 +35,5 @@ Downgrade to save time & costs where u can
 1. Each token -> charge & processing time => Limit no of tokens to keep costs down & performance up.
 2. `max_tokens` does not help contril the consiceness of text => set it high enough to allow a full response => experiment!
 3. Good prompt design!
+
+### Write better prompts
