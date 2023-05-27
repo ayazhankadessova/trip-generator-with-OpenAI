@@ -44,3 +44,5 @@ const response = await openai.createCompletion({
 ```
 
 ## Improve: use env variables
+
+### Next: work on reuability

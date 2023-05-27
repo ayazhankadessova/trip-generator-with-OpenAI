@@ -30,7 +30,7 @@ document.getElementById('send-btn').addEventListener('click', () => {
     setupInputContainer.innerHTML = `<img src="images/bookSuggest.png" class="loading" id="loading">`
     businessBossText.innerText = `Ok, just wait a second while my digital brain digests that...`
     fetchAIreply(userInput)
-    // fetchResult(userInput)
+    fetchResult(userInput)
   }
 })
 
@@ -48,7 +48,7 @@ TODO:
 */
 async function fetchAIreply(userInput) {
   /*
-1. Use examples of an preferences and an 
+1. Use examples of preferences and an 
    enthusiastic response. Be sure to keep the length of your 
    examples reasonably short, say 20 words or so.
 */
@@ -92,7 +92,38 @@ async function fetchResult(userInput) {
 
   const response = await openai.createCompletion({
     model: 'text-davinci-003',
-    prompt: `Give me a travel idea plan based on the budget and preferences of the user.
+    prompt: `Give me a travel destination idea based on the budget and preferences of the user, no description needed, just destination.
+    
+    ###
+    Type: beach holiday
+    Budget: 12,000 HKD
+    Preferences: family-friendly, Europe
+    Days: 7
+    Destination Idea: Algarve, Portugal.
+    ###
+    Type: ${inputArray['travelType']}
+    Budget: ${inputArray['budget']}
+    Preferences: ${inputArray['travelPartner']}; ${inputArray['area']}
+    Days: ${inputArray['days']}
+    Destination Idea:
+    `,
+    temperature: 1,
+    max_tokens: 100,
+    top_p: 0.7,
+    frequency_penalty: 0,
+    presence_penalty: 0,
+  })
+
+  console.log(response)
+  const destinationIdea = response.data.choices[0].text.trim()
+  document.getElementById('output-title').innerText = destinationIdea
+  fetchActivities(destinationIdea)
+}
+
+async function fetchActivities(destinationIdea) {
+  const response = await openai.createCompletion({
+    model: 'text-davinci-003',
+    prompt: `Give me a travel idea plan for ${destinationIdea} based on the budget and preferences of the user. Write every day on the new line with a dash in front of it.
     
     ###
     Type: beach holiday
@@ -113,7 +144,8 @@ async function fetchResult(userInput) {
     Budget: ${inputArray['budget']}
     Preferences: ${inputArray['travelPartner']}; ${inputArray['area']}
     Days: ${inputArray['days']}
-    Destination Idea and Activities for ${inputArray['days']} days:
+    Destination Idea: ${destinationIdea}
+    Activities for 7 days:
     `,
     temperature: 1,
     max_tokens: 700,
@@ -121,7 +153,6 @@ async function fetchResult(userInput) {
     frequency_penalty: 0,
     presence_penalty: 0,
   })
-
-  console.log(response)
-  outputBox.innerHTML = response.data.choices[0].text.trim()
+  const travelplan = response.data.choices[0].text.trim().replace('-', '\n-')
+  outputBox.innerHTML = travelplan
 }
