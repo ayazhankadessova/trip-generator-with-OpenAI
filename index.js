@@ -191,31 +191,33 @@ async function fetchSummary(destinationIdea) {
 }
 
 async function generateImage(prompt) {
+  // const response = await openai.createImage({
+  //   prompt: prompt,
+  //   n: 1,
+  //   size: '265x256',
+  //   response_format: 'b64_json',
+  // })
+  // outputImage.innerHTML = `<img src="data:image/png;base64,${response.data.data[0].b64_json}">`
+
   const response = await openai.createImage({
-    prompt: prompt,
+    prompt: `${prompt}. There should be no text in this image.`,
     n: 1,
-    size: '265x256',
-    response_format: 'b64_json',
+    size: '256x256',
+    response_format: 'url',
   })
-  outputImage.innerHTML = `<img src="data:image/png;base64,${response.data.data[0].b64_json}">`
+  document.getElementById(
+    'output-img-container'
+  ).innerHTML = `<img src="${response.data.data[0].url}">`
 }
 
 async function fetchImagePrompt(place, actvities) {
   const response = await openai.createCompletion({
     model: 'text-davinci-003',
     prompt: `Write a prompt that will generate an image prompt that we can 
-   use to get artwork for our travel idea based on travel destination and description of actvities: ${place}, ${actvities}.`,
-    /*
-Challenge:
-1. Write a prompt that will generate an image prompt that we can 
-   use to get artwork for our movie idea.
-⚠️ OpenAI has no knowledge of our characters. So the image prompt 
-   needs descriptions not names!
-2. Add temperature if you think it's needed.
-*/
+   use to get artwork for our travel idea based on travel destination and description of actvities: ${place}, ${actvities} with good visual detail.`,
     max_tokens: 200,
     temperature: 0.9,
   })
-
-  console.log(response.data.choices[0].text.trim())
+  console.log(response)
+  generateImage(response.data.choices[0].text.trim())
 }
