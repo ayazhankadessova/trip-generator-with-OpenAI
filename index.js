@@ -118,6 +118,7 @@ async function fetchResult(userInput) {
   const destinationIdea = response.data.choices[0].text.trim()
   document.getElementById('output-title').innerText = destinationIdea
   fetchActivities(destinationIdea)
+  fetchSummary(destinationIdea)
 }
 
 async function fetchActivities(destinationIdea) {
@@ -166,4 +167,27 @@ async function fetchActivities(destinationIdea) {
 
   const htmlText = listItems.join('')
   outputBox.innerHTML = htmlText
+}
+
+async function fetchSummary(destinationIdea) {
+  let response = await openai.createCompletion({
+    model: 'text-davinci-003',
+    prompt: `Describe travel destination in one sentence without mentioning the destination itself. People will have to guess it based on your description. 
+    
+    ###
+    Destination Idea: 
+    Summary in one sentence: A scenic haven blending Alpine splendor and warm Swiss hospitality.
+    
+    ### 
+    Destination Idea: ${destinationIdea}
+    Summary in one sentence: `,
+    temperature: 0.9,
+    max_tokens: 50,
+    top_p: 0.7,
+    frequency_penalty: 0,
+    presence_penalty: 0,
+  })
+
+  document.getElementById('output-stars').innerText =
+    response.data.choices[0].text.trim()
 }

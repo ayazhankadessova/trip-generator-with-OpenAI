@@ -48,6 +48,11 @@ SPAN.li {
   margin-left: 2em;
 }
 
+#output-stars {
+  font-style: italic;
+  font-size: 0.8em;
+}
+
 /* =================
       Sections 
      ================= */
