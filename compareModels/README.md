@@ -63,3 +63,20 @@ _Example_
 _template_
 
 `
+
+### OpenAI Create Image
+
+1. Size in pixels
+2. Generated images can have a size of 256x256, 512x512, or 1024x1024 pixels. Smaller sizes are faster to generate. You can request 1-10 images at a time using the n parameter.
+3. image urls last only for 1hours, so use b64_json [big chunk of code that browser can interpret as an image]
+4. Be descriptive with prompt
+
+```
+const response = await openai.createImage({
+  prompt: "a white siamese cat",
+  n: 1,
+  size: "1024x1024",
+  response_format: "url"
+});
+image_url = response.data.data[0].url;
+```
