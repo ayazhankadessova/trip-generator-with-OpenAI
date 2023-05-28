@@ -107,7 +107,7 @@ async function fetchResult(userInput) {
     Days: ${inputArray['days']}
     Destination Idea:
     `,
-    temperature: 1,
+    temperature: 0.9,
     max_tokens: 100,
     top_p: 0.7,
     frequency_penalty: 0,
@@ -121,9 +121,9 @@ async function fetchResult(userInput) {
 }
 
 async function fetchActivities(destinationIdea) {
-  const response = await openai.createCompletion({
+  let response = await openai.createCompletion({
     model: 'text-davinci-003',
-    prompt: `Give me a travel idea plan for ${destinationIdea} based on the budget and preferences of the user. Write every day on the new line with a dash in front of it.
+    prompt: `Give me a travel idea plan for ${destinationIdea} based on the budget and preferences of the user. Write every day on the new line with a dash in front of it. Add '\n' after every day.
     
     ###
     Type: beach holiday
@@ -147,12 +147,23 @@ async function fetchActivities(destinationIdea) {
     Destination Idea: ${destinationIdea}
     Activities for 7 days:
     `,
-    temperature: 1,
+    temperature: 0.9,
     max_tokens: 700,
     top_p: 0.7,
     frequency_penalty: 0,
     presence_penalty: 0,
   })
-  const travelplan = response.data.choices[0].text.trim().replace('-', '\n-')
-  outputBox.innerHTML = travelplan
+
+  let daysOrig = response.data.choices[0].text.trim()
+  const days = daysOrig.split(/(?=- Day)/)
+  console.log(days)
+
+  // display as list
+  const listItems = days.map((day) => {
+    const cleanedDay = day.replace('-', '').trim()
+    return `<SPAN class=li>${cleanedDay}</SPAN>`
+  })
+
+  const htmlText = listItems.join('')
+  outputBox.innerHTML = htmlText
 }

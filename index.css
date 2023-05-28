@@ -43,6 +43,11 @@ p {
   line-height: 1.35em;
 }
 
+SPAN.li {
+  display: list-item;
+  margin-left: 2em;
+}
+
 /* =================
       Sections 
      ================= */
