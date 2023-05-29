@@ -94,6 +94,7 @@ select {
   background-repeat: no-repeat;
   /* Adjust padding to accommodate the arrow */
   padding-right: 40px;
+  font-size: 0.8em;
 }
 
 textarea {
