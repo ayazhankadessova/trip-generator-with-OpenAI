@@ -22,12 +22,20 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
+  height: 90%;
 }
+
+/* body {
+  display: grid;
+  grid-template-rows: 98% auto;
+  min-height: 100vh;
+  margin: 0;
+} */
 
 /* sections */
 
 .intro,
-.ad-input {
+.form-input {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,7 +44,7 @@ body {
 
 .intro {
   margin-top: 0;
-  background-image: url('bg.png');
+  /* background-image: url('bg.png'); */
   background-repeat: no-repeat;
   background-position: right 90%;
   background-size: cover;
@@ -44,13 +52,14 @@ body {
   color: white;
 }
 
-.ad-input {
+.form-input {
   margin: 1em 1em 0 1em;
 }
 
 h1 {
   font-size: 2.2rem;
   margin-top: 0.5em;
+  font-family: 'Montserrat', sans-serif;
 }
 
 h2,
@@ -106,6 +115,11 @@ select {
   font-size: 0.8em;
 }
 
+#digest,
+#wait-message {
+  color: #0369a1 !important;
+}
+
 textarea {
   resize: none;
   height: 75px;
@@ -136,6 +150,8 @@ button:hover {
   width: 250px;
   display: flex;
   align-items: center;
+  text-align: center;
+  margin: 0 0 0.5em 0;
   justify-content: center;
 }
 
@@ -160,7 +176,7 @@ label {
     background-position: bottom 50% right;
   }
 
-  .ad-input {
+  .form-input {
     justify-content: center;
     align-items: center;
     margin-top: unset;
@@ -183,6 +199,8 @@ label {
   width: 320px;
   border: 3px solid #0ea5e9;
   border-radius: 15px;
+  justify-content: center;
+  align-items: center;
 }
 
 .output-container {
@@ -190,9 +208,10 @@ label {
   flex-direction: column;
   margin: 1em auto;
   padding: 1em;
-  width: 49%;
+  width: 47%;
   border: 3px solid #0ea5e9;
   border-radius: 15px;
+  background-color: var(--light-grey);
 }
 
 .output-img-container > img {
@@ -201,16 +220,39 @@ label {
   box-shadow: 1px 1px 5px 1px var(--dark);
 }
 
+.output-img-container {
+  display: flex;
+  justify-content: center; /* Center the image horizontally */
+  align-items: center; /* Center the image vertically */
+}
+
 SPAN.li {
   display: list-item;
   margin-left: 0.8em;
 }
 
 #output-title {
-  margin-top: 0.1em;
+  margin-top: 0.3em;
   margin-bottom: 0;
+  color: #0369a1;
+  font-family: 'Lobster', cursive;
 }
 #output-summary {
   margin: 0.1em 0;
   padding: 0;
+  background-color: transparent;
+}
+
+#output-text {
+  background-color: transparent;
+}
+
+/* Footer */
+
+footer {
+  background-color: rgba(255, 255, 170, 0.895);
+  color: var(--medium-dark);
+  padding: 0.8em;
+  font-size: 0.7em;
+  text-align: center;
 }
