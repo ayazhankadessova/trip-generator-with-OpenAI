@@ -4,6 +4,15 @@
   box-sizing: border-box;
 }
 
+:root {
+  --white: #ffffff;
+  --light: whitesmoke;
+  --light-grey: #e8e8e8;
+  --pink: #ff176b;
+  --medium-dark: #777;
+  --dark: #242526;
+  --border-rad-lg: 15px;
+}
 .section {
   flex: 1;
 }
@@ -120,7 +129,7 @@ button {
   font-size: 1.3rem;
 }
 button:hover {
-  background-color: var(--dark);
+  background-color: var(--medium-dark);
 }
 
 #view-pitch-btn {
