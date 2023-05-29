@@ -1,45 +1,42 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Travel Idea Generator</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title></title>
+    <link rel="stylesheet" href="index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@700&family=Poppins:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="index.css" />
   </head>
 
   <body>
-    <header>
-      <img src="./images/bookstore_TODO.jpg" alt="businessPitch" />
-      <a href="/"><span>Travel Idea</span>Generator</a>
-    </header>
     <main>
-      <!-- The Setup -->
-      <section id="setup-container">
-        <div class="setup-inner">
-          <img src="/images/bookstore_TODO.jpg" />
-          <div class="speech-bubble-ai" id="speech-bubble-ai">
-            <p id="business-boss-text">Write</p>
-          </div>
-        </div>
-        <div
-          class="setup-inner setup-input-container"
-          id="setup-input-container"
-        >
-          <textarea
-            id="setup-textarea"
-            placeholder="Village with 300 peopls."
-          ></textarea>
-          <button class="send-btn" id="send-btn" aria-label="send">
-            <img src="images/bookstore_TODO.jpg" alt="send" />
-          </button>
-        </div>
+      <section class="intro">
+        <h1>Travel Idea Generator</h1>
+        <h2>
+          Exciting <strong>adventures </strong>, <strong>customized</strong> for
+          <strong>you</strong>!
+        </h2>
+        <p>Powered by AI</p>
       </section>
-      <!-- The Output -->
+      <section class="ad-input" id="ad-input">
+        <label for="">Your Budget</label>
+        <input type="text" placeholder="Vegan Fish Cream" id="input-budget" />
+        <label for="">Travel Type</label>
+        <input id="travel-type" type="text" placeholder="kids under 12" />
+        <label for="">Area</label>
+        <input id="travel-area" type="text" placeholder="Europe" />
+        <label for="">Travel Partner</label>
+        <input id="travel-partner" type="text" placeholder="kids under 12" />
+        <label for="">Travel Type</label>
+        <textarea
+          placeholder="Fish flavoured vegan ice cream"
+          id="input-desc"
+        ></textarea>
+        <button id="submit-btn">Generate Travel Idea</button>
+      </section>
       <section class="output-container" id="output-container">
         <div id="output-img-container" class="output-img-container"></div>
         <h1 id="output-title"></h1>
@@ -47,7 +44,8 @@
         <p id="output-text"></p>
       </section>
     </main>
-    <footer>&copy; 2023 TravelPitch All rights reserved</footer>
     <script type="module" src="index.js"></script>
   </body>
 </html>
+
+<!-- Fish flavoured vegan ice cream -->

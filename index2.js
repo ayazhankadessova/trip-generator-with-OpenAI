@@ -1,8 +1,6 @@
 import { Configuration, OpenAIApi } from 'openai'
 import { process } from './env'
 
-let inputArray = {}
-
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
 })
@@ -10,20 +8,10 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration)
 
 document.getElementById('submit-btn').addEventListener('click', () => {
-  inputArray['travelBudget'] = document.getElementById('input-budget').value
-  inputArray['travelDesc'] = document.getElementById('input-desc').value
-  inputArray['travelPartner'] = document.getElementById('travel-partner').value
-  inputArray['travelType'] = document.getElementById('travel-type').value
-  inputArray['travelArea'] = document.getElementById('travel-area').value
-
-  console.log(inputArray)
-
-  // getCopySuggestion(
-  //   inputArray['travelBudget'],
-  //   inputArray['travelDesc'],
-  //   inputArray['travelDesc']
-  // )
-  fetchAIreply()
+  const productName = document.getElementById('name').value
+  const productDesc = document.getElementById('desc').value
+  const productTarget = document.getElementById('target').value
+  getCopySuggestion(productName, productDesc, productTarget)
 })
 
 async function getCopySuggestion(productName, productDesc, productTarget) {
@@ -55,36 +43,10 @@ Challenge:
     `,
     max_tokens: 100,
   })
-
   document
     .getElementById('ad-output')
     .insertAdjacentText('beforeend', response.data.choices[0].text.trim())
   document.getElementById('ad-input').style.display = 'none'
   document.getElementById('ad-output').style.display = 'block'
   console.log(response)
-}
-
-async function fetchAIreply() {
-  const response = await openai.createCompletion({
-    model: 'text-davinci-003',
-    prompt: `Generate a short message to enthusiastically preferences sound like a good and interesting plan and that you need some minutes to think about it. 
-    
-    ###
-    Preferences: 12,000 HKD; beach holiday; family-friendly, Europe
-    message: Wow, a beach holiday in Europe sounds like a fantastic idea! With a budget of 12,000 HKD and a preference for a family-friendly trip, you're in for a great time. Let me take a few seconds to come up with a plan that suits your preferences. Stay tuned!
-    ###
-    Preferences: ${inputArray['travelBudget']}; ${inputArray['travelPartner']}; ${inputArray['travelArea']}; ${inputArray['travelType']}
-    message:
-    `,
-    temperature: 1,
-    max_tokens: 70,
-    top_p: 0.7,
-    frequency_penalty: 0,
-    presence_penalty: 0,
-  })
-
-  const waitMessage = response.data.choices[0].text.trim()
-  document.getElementById('ad-input').style.display = 'none'
-  document.getElementById('output-container').style.display = 'flex'
-  document.getElementById('output-container').innerHTML = waitMessage
 }
