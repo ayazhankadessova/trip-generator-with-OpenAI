@@ -159,7 +159,7 @@ async function fetchSummary(destinationIdea) {
   })
 
   const summary = response.data.choices[0].text.trim()
-  document.getElementById('output-stars').innerText = summary
+  document.getElementById('output-summary').innerText = summary
 
   generateImage(destinationIdea, summary)
 }
