@@ -103,6 +103,9 @@ button {
   font-family: 'Poppins';
   font-size: 1.3rem;
 }
+button:hover {
+  background-color: var(--dark);
+}
 
 #view-pitch-btn {
   width: 250px;
@@ -158,12 +161,26 @@ label {
   display: none;
   flex-direction: column;
   margin: 1em auto;
-  color: var(--dark);
   padding: 1em;
+  width: 320px;
+  border: 3px solid #0ea5e9;
+  border-radius: 15px;
 }
 
 .output-img-container > img {
-  width: 100%;
+  width: 80%;
   border-radius: var(--border-rad-lg);
   box-shadow: 1px 1px 5px 1px var(--dark);
+}
+
+SPAN.li {
+  display: list-item;
+  margin-left: 2em;
+}
+
+#output-title {
+  margin-top: 0.1em;
+}
+#output-summary {
+  padding: 0;
 }
