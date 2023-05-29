@@ -1,6 +1,10 @@
 import { Configuration, OpenAIApi } from 'openai'
 import { process } from './env'
 
+var waitMessageCont = document.getElementById('wait-message')
+var waitCont = document.getElementById('wait-container')
+var adInput = document.getElementById('ad-input')
+
 let inputArray = {}
 
 const configuration = new Configuration({
@@ -15,54 +19,17 @@ document.getElementById('submit-btn').addEventListener('click', () => {
   inputArray['travelPartner'] = document.getElementById('travel-partner').value
   inputArray['travelType'] = document.getElementById('travel-type').value
   inputArray['travelArea'] = document.getElementById('travel-area').value
+  inputArray['travelDays'] = document.getElementById('travel-days').value
 
+  adInput.innerHTML = `
+  <img src="images/bookSuggest.png" class="loading" id="loading">
+  <p>Ok, just wait a second while my digital brain digests that...</p>
+`
   console.log(inputArray)
 
-  // getCopySuggestion(
-  //   inputArray['travelBudget'],
-  //   inputArray['travelDesc'],
-  //   inputArray['travelDesc']
-  // )
   fetchAIreply()
+  fetchResult()
 })
-
-async function getCopySuggestion(productName, productDesc, productTarget) {
-  const response = await openai.createCompletion({
-    model: 'text-davinci-003',
-
-    /*    
-Challenge:
-  1. Add a second example here. Be sure to make it similar in design to the first.
-  2. Remember to use separators 
-*/
-
-    prompt: `Use a product name, a product description and a target market to create advertising copy for a product.
-    ###
-    product name: Flask Tie
-    product description: A tie with a pouch to hold liquids and a straw to drink through
-    product traget market: office workers
-    advertising copy: Are you tired of having to worry about how much to drink throughout the day? With the Flask Tie, you can stay hydrated on-the-go! Our unique tie features a pouch that enables you to securely hold and sip your favorite drinks with the built-in straw! The water cooler is history! Long live Flask Tie!
-    ###
-    product name: SolarSwim
-    product description: Swimming costumes for all genders with solar cells to charge your devices while you sunbathe.
-    product traget market: young adults
-    advertising copy: Don't miss a beat while you're having fun in the sun! SolarSwim is the perfect choice for the tech-savvy, on-the-go millennial. Our innovative swimming costumes come with integrated solar cells that allow you to charge and access your devices while you're at the beach or pool. Enjoy your summer break with SolarSwim!
-    ###
-    product name: ${productName}
-    product description: ${productDesc}
-    product traget market: ${productTarget}
-    advertising copy: 
-    `,
-    max_tokens: 100,
-  })
-
-  document
-    .getElementById('ad-output')
-    .insertAdjacentText('beforeend', response.data.choices[0].text.trim())
-  document.getElementById('ad-input').style.display = 'none'
-  document.getElementById('ad-output').style.display = 'block'
-  console.log(response)
-}
 
 async function fetchAIreply() {
   const response = await openai.createCompletion({
@@ -85,6 +52,134 @@ async function fetchAIreply() {
 
   const waitMessage = response.data.choices[0].text.trim()
   document.getElementById('ad-input').style.display = 'none'
-  document.getElementById('output-container').style.display = 'flex'
-  document.getElementById('output-container').innerHTML = waitMessage
+  waitMessageCont.textContent = waitMessage
+  document.getElementById('wait-container').style.display = 'flex'
+  console.log(waitMessage)
+}
+
+async function fetchResult() {
+  const response = await openai.createCompletion({
+    model: 'text-davinci-003',
+    prompt: `Give me a travel destination idea based on the budget and preferences of the user, no description needed, just destination.
+    
+    ###
+    Type: beach holiday
+    Budget: 12,000 HKD
+    Preferences: family-friendly, Europe
+    Days: 7
+    Destination Idea: Algarve, Portugal.
+    ###
+    Type: ${inputArray['travelType']}
+    Budget: ${inputArray['travelBudget']}
+    Preferences: ${inputArray['travelPartner']}; ${inputArray['travelArea']}
+    Days: ${inputArray['travelDays']}
+    Destination Idea:
+    `,
+    temperature: 0.9,
+    max_tokens: 100,
+    top_p: 0.7,
+    frequency_penalty: 0,
+    presence_penalty: 0,
+  })
+
+  console.log(response)
+  const destinationIdea = response.data.choices[0].text.trim()
+  document.getElementById('output-title').innerText = destinationIdea
+
+  fetchActivities(destinationIdea)
+  fetchSummary(destinationIdea)
+}
+
+async function fetchActivities(destinationIdea) {
+  let response = await openai.createCompletion({
+    model: 'text-davinci-003',
+    prompt: `Give me a travel idea plan for ${destinationIdea} based on the budget and preferences of the user. Write every day on the new line with a dash in front of it. Add '\n' after every day.
+    
+    ###
+    Type: beach holiday
+    Budget: 12,000 HKD
+    Preferences: family-friendly, Europe
+    Days: 7
+    Destination Idea: Algarve, Portugal.
+    Activities for 7 days: 
+    - Day 1: Fly to Faro, Algarve with budget airlines or discounted flights.\n
+    - Day 2: Stay in family-friendly resorts or apartments near the beach in Albufeira or Lagos.\n
+    - Day 3: Explore stunning beaches like Praia da Marinha and Praia da Rocha.\n
+    - Day 4; Visit water parks like Slide & Splash and Aqualand Algarve for a fun day.\n
+    - Day 5: Take boat trips to explore hidden caves and enjoy dolphin watching.\n
+    - Day 6: Discover historic towns like Faro, Lagos, and Tavira for cultural excursions\n
+    - Day 7: Consider dining at local eateries and trying street food to save on expenses.\n
+    ###
+    Type: ${inputArray['travelType']}
+    Budget: ${inputArray['travelBudget']}
+    Preferences: ${inputArray['travelPartner']}; ${inputArray['travelArea']}
+    Days: ${inputArray['travelDays']}
+    Destination Idea: ${destinationIdea}
+    Activities for 7 days:
+    `,
+    temperature: 0.9,
+    max_tokens: 700,
+    top_p: 0.7,
+    frequency_penalty: 0,
+    presence_penalty: 0,
+  })
+
+  let daysOrig = response.data.choices[0].text.trim()
+  const days = daysOrig.split(/(?=- Day)/)
+  console.log(days)
+
+  // display as list
+  const listItems = days.map((day) => {
+    const cleanedDay = day.replace('-', '').trim()
+    return `<SPAN class=li>${cleanedDay}</SPAN>`
+  })
+
+  const htmlText = listItems.join('')
+  const outputBox = document.getElementById('output-text')
+  outputBox.innerHTML = htmlText
+}
+
+async function fetchSummary(destinationIdea) {
+  let response = await openai.createCompletion({
+    model: 'text-davinci-003',
+    prompt: `Describe travel destination in one sentence without mentioning the destination itself. People will have to guess it based on your description. 
+    
+    ###
+    Destination Idea: 
+    Summary in one sentence: A scenic haven blending Alpine splendor and warm Swiss hospitality.
+    
+    ### 
+    Destination Idea: ${destinationIdea}
+    Summary in one sentence: `,
+    temperature: 0.9,
+    max_tokens: 50,
+    top_p: 0.7,
+    frequency_penalty: 0,
+    presence_penalty: 0,
+  })
+
+  const summary = response.data.choices[0].text.trim()
+  document.getElementById('output-stars').innerText = summary
+
+  generateImage(destinationIdea, summary)
+}
+
+async function generateImage(destinationIdea, summary) {
+  const response = await openai.createImage({
+    prompt: `${destinationIdea}. ${summary}. There should be no text in this image.`,
+    n: 1,
+    size: '256x256',
+    response_format: 'url',
+  })
+  document.getElementById(
+    'output-img-container'
+  ).innerHTML = `<img src="${response.data.data[0].url}">`
+
+  document.getElementById(
+    'wait-container'
+  ).innerHTML = `<button id="view-pitch-btn" class="view-pitch-btn">View Pitch</button>`
+  document.getElementById('view-pitch-btn').addEventListener('click', () => {
+    document.getElementById('wait-container').style.display = 'none'
+    document.getElementById('output-container').style.display = 'flex'
+  })
 }
