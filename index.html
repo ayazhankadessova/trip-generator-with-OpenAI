@@ -22,19 +22,41 @@
         <p>Powered by AI</p>
       </section>
       <section class="ad-input" id="ad-input">
-        <label for="">Your Budget</label>
-        <input type="text" placeholder="Vegan Fish Cream" id="input-budget" />
+        <label for="input-budget">Your Budget</label>
+        <select id="input-budget">
+          <option value="5000-10000HKD">5000-10000HKD</option>
+          <option value="10000-30000HKD">10000-30000HKD</option>
+          <option value="30000-50000HKD">30000-50000HKD</option>
+          <option value="50000+HKD">50000+HKD</option>
+        </select>
         <label for="">Travel Type</label>
-        <input id="travel-type" type="text" placeholder="kids under 12" />
+        <select id="travel-type">
+          <option value="Beach Holiday">Beach Holiday</option>
+          <option value="City Break">City Break</option>
+        </select>
         <label for="">Area</label>
-        <input id="travel-days" type="text" placeholder="7" />
+        <select id="travel-area">
+          <option value="Central Asia">Central Asia</option>
+          <option value="Europe">Europe</option>
+          <option value="Asia">Asia</option>
+          <option value="SouthEast Asia">SouthEast Asia</option>
+          <option value="Africa">Africa</option>
+        </select>
         <label for="">Days</label>
-        <input id="travel-area" type="text" placeholder="Europe" />
+        <select id="travel-days">
+          <option value="5">5</option>
+          <option value="7">7</option>
+          <option value="10">10</option>
+        </select>
         <label for="">Travel Partner</label>
-        <input id="travel-partner" type="text" placeholder="kids under 12" />
-        <label for="">Travel Type</label>
+        <select id="travel-partner">
+          <option value="Family">Family</option>
+          <option value="Friends">Friends</option>
+          <option value="Solo">Solo</option>
+        </select>
+        <label for="">Travel Preferences</label>
         <textarea
-          placeholder="Fish flavoured vegan ice cream"
+          placeholder="Write any preferences you have here."
           id="input-desc"
         ></textarea>
         <button id="submit-btn">Generate Travel Idea</button>
@@ -44,7 +66,7 @@
       </section>
       <section class="output-container" id="output-container">
         <div id="output-img-container" class="output-img-container"></div>
-        <h1 id="output-title"></h1>
+        <h2 id="output-title"></h2>
         <p id="output-summary"></p>
         <p id="output-text"></p>
       </section>
