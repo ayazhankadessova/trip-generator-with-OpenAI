@@ -2,8 +2,7 @@ import { Configuration, OpenAIApi } from 'openai'
 import { process } from './env'
 
 var waitMessageCont = document.getElementById('wait-message')
-var waitCont = document.getElementById('wait-container')
-var adInput = document.getElementById('ad-input')
+var adInput = document.getElementById('form-input')
 
 let inputArray = {}
 
@@ -22,8 +21,8 @@ document.getElementById('submit-btn').addEventListener('click', () => {
   inputArray['travelDays'] = document.getElementById('travel-days').value
 
   adInput.innerHTML = `
-  <img src="images/bookSuggest.png" class="loading" id="loading">
-  <p>Ok, just wait a second while my digital brain digests that...</p>
+  <img src="images/loading.svg" class="loading" id="loading">
+  <h3 id = "digest" >Ok, just wait a second while my digital brain digests that...</h3>
 `
   console.log(inputArray)
 
@@ -51,7 +50,7 @@ async function fetchAIreply() {
   })
 
   const waitMessage = response.data.choices[0].text.trim()
-  document.getElementById('ad-input').style.display = 'none'
+  document.getElementById('form-input').style.display = 'none'
   waitMessageCont.textContent = waitMessage
   document.getElementById('wait-container').style.display = 'flex'
   console.log(waitMessage)
@@ -134,9 +133,9 @@ async function fetchActivities(destinationIdea) {
     return `<SPAN class=li>${cleanedDay}</SPAN>`
   })
 
-  const htmlText = listItems.join('')
+  const listText = listItems.join('')
   const outputBox = document.getElementById('output-text')
-  outputBox.innerHTML = htmlText
+  outputBox.innerHTML = listText
 }
 
 async function fetchSummary(destinationIdea) {
