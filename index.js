@@ -163,8 +163,6 @@ async function fetchActivities(destinationIdea) {
 
   const htmlText = listItems.join('')
   outputBox.innerHTML = htmlText
-
-  fetchImagePrompt(destinationIdea, daysOrig)
 }
 
 async function fetchSummary(destinationIdea) {
@@ -186,11 +184,13 @@ async function fetchSummary(destinationIdea) {
     presence_penalty: 0,
   })
 
-  document.getElementById('output-stars').innerText =
-    response.data.choices[0].text.trim()
+  const summary = response.data.choices[0].text.trim()
+  document.getElementById('output-stars').innerText = summary
+
+  generateImage(destinationIdea, summary)
 }
 
-async function generateImage(prompt) {
+async function generateImage(destinationIdea, summary) {
   // const response = await openai.createImage({
   //   prompt: prompt,
   //   n: 1,
@@ -200,7 +200,7 @@ async function generateImage(prompt) {
   // outputImage.innerHTML = `<img src="data:image/png;base64,${response.data.data[0].b64_json}">`
 
   const response = await openai.createImage({
-    prompt: `${prompt}. There should be no text in this image.`,
+    prompt: `${destinationIdea}. ${summary}. There should be no text in this image.`,
     n: 1,
     size: '256x256',
     response_format: 'url',
@@ -208,28 +208,12 @@ async function generateImage(prompt) {
   document.getElementById(
     'output-img-container'
   ).innerHTML = `<img src="${response.data.data[0].url}">`
-}
 
-async function fetchImagePrompt(place, actvities) {
-  const response = await openai.createCompletion({
-    model: 'text-davinci-003',
-    prompt: `Write a prompt that will generate an image prompt that we can 
-   use to get artwork for our travel idea based on travel destination and description of actvities: ${place}, ${actvities} with good visual detail.`,
-    max_tokens: 200,
-    temperature: 0.9,
+  setupInputContainer.innerHTML = `<button id="view-pitch-btn" class="view-pitch-btn">View Pitch</button>`
+  document.getElementById('view-pitch-btn').addEventListener('click', () => {
+    document.getElementById('setup-container').style.display = 'none'
+    document.getElementById('output-container').style.display = 'flex'
+    businessBossText.innerText =
+      'If you like the generated idea, star the repo :)'
   })
-  console.log(response)
-  generateImage(response.data.choices[0].text.trim())
-
-  /* w b64:
-    const response = await openai.createImage({
-      prompt: `${imagePrompt}. There should be no text in this image.`,
-      n: 1,
-      size: '256x256',
-      response_format: 'b64_json',
-    })
-    document.getElementById(
-      'output-img-container'
-    ).innerHTML = `<img src="data:image/png;base64,${response.data.data[0].url}">`
-    */
 }
