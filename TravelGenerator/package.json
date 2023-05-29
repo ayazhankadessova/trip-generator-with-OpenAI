@@ -1,0 +1,29 @@
+{
+  "name": "bookgenerator",
+  "version": "1.0.0",
+  "description": "Using Open AI API Models Tokens prompts examples to train Modelsextract info from texts generate images with words",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayazhankadessova/BookGenerator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayazhankadessova/BookGenerator/issues"
+  },
+  "homepage": "https://github.com/ayazhankadessova/BookGenerator#readme",
+  "dependencies": {
+    "openai": "3.1.0"
+  },
+  "devDependencies": {
+    "vite": "latest"
+  },
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  }
+}
