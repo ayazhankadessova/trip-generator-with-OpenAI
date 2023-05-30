@@ -62,7 +62,7 @@ Vanilla JS, React.js, Angular.js, ES6+
 
 ## 🔗 Links
 
--portfolio, linkedin, twitter
+- [Linkedin](https://www.linkedin.com/in/ayazhankad/)
 
 ## What I learned:
 
