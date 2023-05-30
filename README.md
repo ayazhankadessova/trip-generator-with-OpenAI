@@ -17,8 +17,13 @@
 
 - [Github Repo](https://github.com/ayazhankadessova/trip-generator-OpenAI)
 
-![travel-generator](https://github.com/ayazhankadessova/trip-generator-OpenAI/assets/86869537/fa2c7882-cc15-4e4e-9557-ddefaa35482c)
 
+![ezgif com-gif-maker](https://github.com/ayazhankadessova/trip-generator-OpenAI/assets/86869537/200c039e-f8ce-4464-8156-dfdeaefc6693)
+
+
+from IPython.display import Image, display
+X = Image(url='travel-generator.gif')
+display(X)
 
 ## Author
 
