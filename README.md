@@ -17,8 +17,8 @@
 
 - [Github Repo](https://github.com/ayazhankadessova/trip-generator-OpenAI)
 
+![trip-generator-inf](https://github.com/ayazhankadessova/trip-generator-OpenAI/assets/86869537/8a93377f-859c-42be-b39e-3b13304e062f)
 
-![ezgif com-gif-maker](https://github.com/ayazhankadessova/trip-generator-OpenAI/assets/86869537/200c039e-f8ce-4464-8156-dfdeaefc6693)
 
 
 from IPython.display import Image, display
