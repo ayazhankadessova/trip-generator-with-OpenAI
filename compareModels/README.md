@@ -1,4 +1,4 @@
-## GPT MODELs
+## 🤩 Comparing GPT Models
 
 text-davinci-003 [supports completion, faster]
 text-curie-001
@@ -17,7 +17,7 @@ Downgrade to save time & costs where u can
 1. Newer models : more text, but slower
 2. Older models: less text, but faster
 
-### PlayGround: Experiment with temperature/frequency/stop settings; https://platform.openai.com/playground?lang=node.js
+#### PlayGround: Experiment with temperature/frequency/stop settings; https://platform.openai.com/playground?lang=node.js
 
 ### Tokens/Maximum
 
@@ -30,35 +30,35 @@ Downgrade to save time & costs where u can
 
 4. default : 16
 
-#### Why are tokens important?
+### Why are tokens important?
 
 1. Each token -> charge & processing time => Limit no of tokens to keep costs down & performance up.
 2. `max_tokens` does not help contril the consiceness of text => set it high enough to allow a full response => experiment!
 3. Good prompt design!
 
-### Write better prompts
+### H
 
-- Zero shot Approach
+1. Zero shot Approach
 
-1. Just an instruction
-2. Fine for many simple instructions
+- Just an instruction
+- Fine for many simple instructions
 
-- Few shot Approach [ with examples ]
+2. Few shot Approach [ with examples ]
 
-1. Add one or more examples
-2. Helps the AI understand what you want
-3. Great for more complex tasks
+- Add one or more examples
+- Helps the AI understand what you want
+- Great for more complex tasks
 
 - Add `###` when u are giving diff entities, such as:
 
 `
 _instructions_
 
-###
+`###`
 
 _Example_
 
-###
+`###`
 
 _template_
 
