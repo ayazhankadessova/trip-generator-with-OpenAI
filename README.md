@@ -21,10 +21,6 @@
 <img src="https://github.com/ayazhankadessova/trip-generator-OpenAI/assets/86869537/8a93377f-859c-42be-b39e-3b13304e062f" width="800" alt="trip-generator-inf">
 </p>
 
-## Author
-
-- [@ayazhankadessova](https://github.com/ayazhankadessova)
-
 ## Run Locally
 
 Clone the project
@@ -51,19 +47,17 @@ Start the app
 npm run dev
 ```
 
+## Author
+
+- [@ayazhankadessova](https://github.com/ayazhankadessova)
+- [Linkedin](https://www.linkedin.com/in/ayazhankad/)
+
+
 ## About Me
 
 I'm a software developer from Kazakhstn, studying in Hong Kong.
 
-👩‍💻 I'm currently learning on React.js
-
-## 🛠 Skills
-
-Vanilla JS, React.js, Angular.js, ES6+
-
-## 🔗 Links
-
-- [Linkedin](https://www.linkedin.com/in/ayazhankad/)
+👩‍💻 I'm currently improving my skills in React.js :)
 
 ## What I learned:
 
