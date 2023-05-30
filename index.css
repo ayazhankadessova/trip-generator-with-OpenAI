@@ -14,8 +14,10 @@
 }
 
 /* same height*/
-.section {
+section {
   flex: 1;
+  /* height: 100%; */
+  display: flex;
 }
 
 html,
@@ -150,13 +152,17 @@ textarea::placeholder {
 .wait-container {
   display: none;
   flex-direction: column;
-  margin: 1em auto;
   padding: 1em;
   width: 320px;
   border: 3px solid var(--light-blue);
   border-radius: 15px;
   justify-content: center;
   align-items: center;
+  margin: 1em 1em 1em 1em;
+}
+
+.plane {
+  width: 200px; /* Adjust the width value as desired */
 }
 
 /* =================
@@ -202,7 +208,7 @@ button:hover {
 
   .intro {
     height: 100vh;
-    max-width: 50%;
+    max-width: 60%;
     justify-content: space-around;
     background-position: bottom 50% right;
   }
@@ -211,7 +217,6 @@ button:hover {
     justify-content: center;
     align-items: center;
     margin-top: unset;
-    width: 50%;
   }
 
   p {
@@ -229,11 +234,11 @@ button:hover {
 .output-container {
   display: none;
   flex-direction: column;
-  margin: 1em auto;
+  margin: 1em 1em 1em 1em;
   padding: 1em;
-  width: 47%;
+  width: 100%;
   align-items: center;
-  /* justify-content: center; */
+  justify-content: center;
   border: 3px solid var(--light-blue);
   border-radius: 15px;
   background-color: var(--light-grey);
