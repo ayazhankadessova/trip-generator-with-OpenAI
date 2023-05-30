@@ -191,13 +191,6 @@ async function fetchSummary(destinationIdea) {
 }
 
 async function generateImage(destinationIdea, summary) {
-  // const response = await openai.createImage({
-  //   prompt: prompt,
-  //   n: 1,
-  //   size: '265x256',
-  //   response_format: 'b64_json',
-  // })
-  // outputImage.innerHTML = `<img src="data:image/png;base64,${response.data.data[0].b64_json}">`
 
   const response = await openai.createImage({
     prompt: `${destinationIdea}. ${summary}. There should be no text in this image.`,

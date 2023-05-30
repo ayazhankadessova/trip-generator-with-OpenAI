@@ -10,7 +10,6 @@
   --light-grey: #e8e8e8;
   --pink: #ff176b;
   --medium-dark: #777;
-  --dark: #242526;
   --border-rad-lg: 15px;
 }
 .section {
@@ -39,14 +38,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0 0.5em;
 }
 
 .intro {
   margin-top: 0;
   /* background-image: url('bg.png'); */
   background-repeat: no-repeat;
-  background-position: right 90%;
+  /* background-position: right 90%; */
   background-size: cover;
   background-color: #0ea5e9;
   color: white;
@@ -101,7 +99,7 @@ select {
   border: 1px solid #0ea5e9;
   padding: 15px;
   width: 280px;
-  font-family: inherit;
+  font-family: 'Montserrat', sans-serif;
   font-size: inherit;
   cursor: pointer;
   line-height: inherit;
@@ -113,6 +111,10 @@ select {
   /* Adjust padding to accommodate the arrow */
   padding-right: 40px;
   font-size: 0.8em;
+  font-family: 'Montserrat', sans-serif;
+  /* text-opacity: 0.4; */
+  color: var(--medium-dark);
+  /* color: #0ea5e9; */
 }
 
 #digest,
@@ -128,7 +130,7 @@ textarea {
 input::placeholder,
 textarea::placeholder {
   opacity: 0.4;
-  color: #0ea5e9;
+  color: var(--medium-dark);
 }
 
 button {
@@ -139,7 +141,7 @@ button {
   color: white;
   border: none;
   border-radius: 5px;
-  font-family: 'Poppins';
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.3rem;
 }
 button:hover {
@@ -250,6 +252,7 @@ SPAN.li {
 /* Footer */
 
 footer {
+  margin-top: 1em;
   background-color: rgba(255, 255, 170, 0.895);
   color: var(--medium-dark);
   padding: 0.8em;
