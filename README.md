@@ -16,7 +16,7 @@
 ### Links & Demo
 
 - [Github Repo](https://github.com/ayazhankadessova/trip-generator-OpenAI)
-- ![Demo](https://private-user-images.githubusercontent.com/86869537/242060618-3930b463-a7b3-4848-93f2-0f9fe1f9781f.gif?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJrZXkiOiJrZXkxIiwiZXhwIjoxNjg1NDcxMTE4LCJuYmYiOjE2ODU0NzA4MTgsInBhdGgiOiIvODY4Njk1MzcvMjQyMDYwNjE4LTM5MzBiNDYzLWE3YjMtNDg0OC05M2YyLTBmOWZlMWY5NzgxZi5naWY_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBSVdOSllBWDRDU1ZFSDUzQSUyRjIwMjMwNTMwJTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDIzMDUzMFQxODIwMThaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT05MGY1MmFlZDQ0YjUzZDk3NDRkZGFjMTg4MGQwNjFmODQ1YjdkYzRlZWYwNGZlODg5ZTc1NGRjMjZjYTlhNWVjJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.Qr6-anu42rEqsJBlVap9d_rT7H4fmhZH08qu7FG5PDg)
+- ![Demo](https://user-images.githubusercontent.com/86869537/242061786-03efc7f3-7024-4f1f-90da-91913ade2cab.gif)
 
 ## Author
 
