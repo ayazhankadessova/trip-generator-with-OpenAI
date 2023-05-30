@@ -5,13 +5,15 @@
 }
 
 :root {
-  --white: #ffffff;
-  --light: whitesmoke;
+  --white: #fff;
   --light-grey: #e8e8e8;
-  --pink: #ff176b;
   --medium-dark: #777;
   --border-rad-lg: 15px;
+  --light-blue: #0ea5e9;
+  --dark-blue: #0369a1;
 }
+
+/* same height*/
 .section {
   flex: 1;
 }
@@ -24,13 +26,6 @@ body {
   height: 90%;
 }
 
-/* body {
-  display: grid;
-  grid-template-rows: 98% auto;
-  min-height: 100vh;
-  margin: 0;
-} */
-
 /* sections */
 
 .intro,
@@ -42,18 +37,64 @@ body {
 
 .intro {
   margin-top: 0;
-  /* background-image: url('bg.png'); */
   background-repeat: no-repeat;
-  /* background-position: right 90%; */
   background-size: cover;
-  background-color: #0ea5e9;
-  color: white;
+  background-color: var(--light-blue);
+  color: var(--white);
 }
 
+/* =================
+    Preferences Form 
+================= */
 .form-input {
   margin: 1em 1em 0 1em;
 }
+textarea,
+input[type='text'] {
+  border: 1px solid var(--light-blue);
+  width: 280px;
+  padding: 15px 15px;
+  border-radius: 5px;
+}
 
+label {
+  margin-bottom: -0.6em;
+  margin-top: 0.6em;
+  z-index: 1;
+  background-color: var(--white);
+  padding: 0 0.5em;
+  color: var(--dark-blue);
+}
+
+select {
+  appearance: none;
+  -moz-appearance: none; /* Firefox */
+  -webkit-appearance: none; /* Safari and Chrome */
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  border: 1px solid var(--light-blue);
+  padding: 15px;
+  width: 280px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: inherit;
+  cursor: pointer;
+  line-height: inherit;
+  display: grid;
+  /* Add the custom arrow image */
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-position: right center;
+  background-repeat: no-repeat;
+  /* Adjust padding to accommodate the arrow */
+  padding-right: 40px;
+  font-size: 0.8em;
+  font-family: 'Montserrat', sans-serif;
+  /* text-opacity: 0.4; */
+  color: var(--medium-dark);
+}
+
+/* =================
+      Typography 
+================= */
 h1 {
   font-size: 2.2rem;
   margin-top: 0.5em;
@@ -76,50 +117,23 @@ h3 {
 h4 {
   font-size: 1rem;
   font-weight: 400;
-  color: #0ea5e9;
+  color: var(--light-blue);
 }
 
 strong {
   font-weight: 700;
 }
 
-textarea,
-input[type='text'] {
-  border: 1px solid #0ea5e9;
-  width: 280px;
-  padding: 15px 15px;
-  border-radius: 5px;
-}
-
-select {
-  appearance: none;
-  -moz-appearance: none; /* Firefox */
-  -webkit-appearance: none; /* Safari and Chrome */
-  background-color: transparent;
-  border: 1px solid #0ea5e9;
-  padding: 15px;
-  width: 280px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: inherit;
-  cursor: pointer;
-  line-height: inherit;
-  display: grid;
-  /* Add the custom arrow image */
-  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
-  background-position: right center;
-  background-repeat: no-repeat;
-  /* Adjust padding to accommodate the arrow */
-  padding-right: 40px;
-  font-size: 0.8em;
-  font-family: 'Montserrat', sans-serif;
-  /* text-opacity: 0.4; */
-  color: var(--medium-dark);
-  /* color: #0ea5e9; */
-}
+/* =================
+    Wait messages 
+================= */
 
 #digest,
 #wait-message {
-  color: #0369a1 !important;
+  color: var(--dark-blue) !important;
+  margin-top: 0.5em;
+  text-align: center;
+  justify-content: center;
 }
 
 textarea {
@@ -133,12 +147,28 @@ textarea::placeholder {
   color: var(--medium-dark);
 }
 
+.wait-container {
+  display: none;
+  flex-direction: column;
+  margin: 1em auto;
+  padding: 1em;
+  width: 320px;
+  border: 3px solid var(--light-blue);
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =================
+    Buttons 
+================= */
+
 button {
   margin-top: 1em;
-  background: #0ea5e9;
+  background: var(--light-blue);
   width: 280px;
   padding: 15px 0;
-  color: white;
+  color: var(--white);
   border: none;
   border-radius: 5px;
   font-family: 'Montserrat', sans-serif;
@@ -151,19 +181,18 @@ button:hover {
 #view-pitch-btn {
   width: 250px;
   display: flex;
-  align-items: center;
   text-align: center;
   margin: 0 0 0.5em 0;
   justify-content: center;
+  align-items: center;
 }
 
-label {
-  margin-bottom: -0.6em;
-  margin-top: 0.6em;
-  z-index: 1;
-  background-color: white;
-  padding: 0 0.5em;
-  color: #0369a1;
+#more-btn {
+  width: 230px;
+  /* margin: 0 0 0 0; */
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
 }
 
 @media (min-width: 600px) {
@@ -186,24 +215,16 @@ label {
   }
 
   p {
-    background-color: white;
-    color: #0369a1;
+    background-color: var(--white);
+    color: var(--dark-blue);
     padding: 0.3em;
     border-radius: 5px;
   }
 }
 
-.wait-container {
-  display: none;
-  flex-direction: column;
-  margin: 1em auto;
-  padding: 1em;
-  width: 320px;
-  border: 3px solid #0ea5e9;
-  border-radius: 15px;
-  justify-content: center;
-  align-items: center;
-}
+/* =================
+    Output 
+================= */
 
 .output-container {
   display: none;
@@ -211,7 +232,9 @@ label {
   margin: 1em auto;
   padding: 1em;
   width: 47%;
-  border: 3px solid #0ea5e9;
+  align-items: center;
+  /* justify-content: center; */
+  border: 3px solid var(--light-blue);
   border-radius: 15px;
   background-color: var(--light-grey);
 }
@@ -236,7 +259,7 @@ SPAN.li {
 #output-title {
   margin-top: 0.3em;
   margin-bottom: 0;
-  color: #0369a1;
+  color: var(--dark-blue);
   font-family: 'Lobster', cursive;
 }
 #output-summary {
@@ -249,7 +272,9 @@ SPAN.li {
   background-color: transparent;
 }
 
-/* Footer */
+/* =================
+    Footer 
+================= */
 
 footer {
   margin-top: 1em;
