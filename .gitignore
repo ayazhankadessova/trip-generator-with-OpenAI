@@ -1,5 +1,7 @@
 /Travel2
 /node_modules
 /Travel
-env.js
 .env
+
+.DS_Store
+env.js
