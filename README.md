@@ -74,4 +74,3 @@ I'm aspiring software developer from Kazakhstn, studying in Hong Kong.
 3. Goals:
 
 - Make better frontend
-Please never add secrets to this repo
