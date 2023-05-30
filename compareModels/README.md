@@ -1,16 +1,21 @@
 ## 🤩 Comparing GPT Models
 
-text-davinci-003 [supports completion, faster]
-text-curie-001
-text-babbage-001
-text-ada-001
+1. text-davinci-003 [supports completion, faster]
+2. text-curie-001
+3. text-babbage-001
+4. text-ada-001
 
 ### How to choose a model?
 
-Start with the best available model
-Downgrade to save time & costs where u can
+1. Start with the best available model
+2. Downgrade to save time & costs where u can
 
 #### Prompt Compare Tool: https://gpttools.com/comparisontool
+
+<p align="center">
+  <img src="Comparison002_003.png" width="700" title="Comparing DaVinci models">
+  <img src="Comparison_Book.png" width="700" title="Comparing DaVinci models">
+</p>
 
 ### Takeaway:
 
