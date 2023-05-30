@@ -17,7 +17,8 @@
 
 - [Github Repo](https://github.com/ayazhankadessova/trip-generator-OpenAI)
 
-![Demo](https://user-images.githubusercontent.com/86869537/242061786-03efc7f3-7024-4f1f-90da-91913ade2cab.gif)
+![travel-generator](https://github.com/ayazhankadessova/trip-generator-OpenAI/assets/86869537/fa2c7882-cc15-4e4e-9557-ddefaa35482c)
+
 
 ## Author
 
