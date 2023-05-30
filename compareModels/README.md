@@ -46,7 +46,7 @@
 2. `max_tokens` does not help contril the consiceness of text => set it high enough to allow a full response => experiment!
 3. Good prompt design!
 
-### H
+### 💭 How to Write Good Prompts?
 
 1. Zero shot Approach
 
@@ -74,7 +74,7 @@ _template_
 
 `
 
-### OpenAI Create Image
+### 📸 OpenAI Create Image
 
 1. Size in pixels
 2. Generated images can have a size of 256x256, 512x512, or 1024x1024 pixels. Smaller sizes are faster to generate. You can request 1-10 images at a time using the n parameter.
