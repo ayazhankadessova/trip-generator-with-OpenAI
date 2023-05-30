@@ -10,11 +10,16 @@
 1. Start with the best available model
 2. Downgrade to save time & costs where u can
 
+**look at elapsed time**
+
+<p align="center">
+  <img src="Comparison_Book.png" width="700" title="Comparing DaVinci models">
+</p>
+
 #### Prompt Compare Tool: https://gpttools.com/comparisontool
 
 <p align="center">
   <img src="Comparison002_003.png" width="700" title="Comparing DaVinci models">
-  <img src="Comparison_Book.png" width="700" title="Comparing DaVinci models">
 </p>
 
 ### Takeaway:
