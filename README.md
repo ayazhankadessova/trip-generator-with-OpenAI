@@ -15,29 +15,25 @@
 
 ### Links & Demo
 
-- [Github Repo](https://github.com/ozgeahras/movie-creator-with-OpenAI)
+- [Github Repo](https://github.com/ayazhankadessova/trip-generator-OpenAI)
 - [Demo](https://movie-idea-creator-openai.netlify.app/)
 
 ## Author
 
-- [@ozgeahras](https://github.com/ozgeahras)
-
-## Source
-
-- https://scrimba.com
+- [@ayazhankadessova](https://github.com/ayazhankadessova)
 
 ## Run Locally
 
 Clone the project
 
 ```bash
-  git clone https://github.com/ozgeahras/movie-creator-with-OpenAI.git
+  git clone https://github.com/ayazhankadessova/trip-generator-OpenAI.git
 ```
 
 Go to the project directory
 
 ```bash
-  cd ..movie-creator-with-OpenAI
+  cd ..trip-generator-OpenAI
 ```
 
 Install dependencies
@@ -54,13 +50,11 @@ npm run dev
 
 ## Screenshots
 
-![App Screenshot](https://github.com/ozgeahras/movie-creator-with-OpenAI/blob/master/public/screenshot.png)
-
 ## About Me
 
-I'm frontend developer in Istanbul/Turkey.
+I'm a software developer from Kazakhstn, studying in Hong Kong.
 
-👩‍💻 I'm currently working on React.js
+👩‍💻 I'm currently learning on React.js
 
 ## 🛠 Skills
 
@@ -68,9 +62,9 @@ Vanilla JS, React.js, Angular.js, ES6+
 
 ## 🔗 Links
 
-[![portfolio](https://img.shields.io/badge/my_portfolio-1DA1F2?style=for-the-badge&logo=ko-fi&logoColor=white)](https://ozgeahras.com/)  
-[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ozgeahras/)  
-[![twitter](https://img.shields.io/badge/github-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/ozgeahras/)
+-portfolio, linkedin, twitter
+
+## What I learned:
 
 1. Used the OpenAI API
 
