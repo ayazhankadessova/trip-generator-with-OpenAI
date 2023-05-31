@@ -1,14 +1,9 @@
-# Travel Destination Generator - Vite & OPENAI
-
 <h2 align="center">
- <img src="https://media.giphy.com/media/6UmKlxuqegit0AdW2G/giphy.gif" width="100"> University BookShop Manager <img src="https://media.giphy.com/media/Sh7FMlRTsgB8lO8WKJ/giphy.gif" width="60">
+ <img src="https://media.giphy.com/media/fGL6oc26zsv6sA1sLx/giphy.gif" width="90"> Travel Destination Generator - Vite & OPENAI <img src="https://media.giphy.com/media/fGL6oc26zsv6sA1sLx/giphy.gif" width="90">
 </h2>
+`Javascript`, `HTML`, `CSS`, `OpenAI (openai.createCompletion, openai.createImage)`, `API`, `Vite`, `Dall-E`, `text-davinci-003`
 
-## Tech Stack
-
-**Client:** Javascript, HTML, CSS, OPENAI, Vite
-
-### Links & Demo
+## Links & Demo
 
 <p align="center">
 <img src="https://github.com/ayazhankadessova/trip-generator-OpenAI/assets/86869537/8a93377f-859c-42be-b39e-3b13304e062f" width="800" alt="trip-generator-inf">
@@ -60,15 +55,6 @@ export const process = {
 ```bash
 npm run dev
 ```
-
-## Overview
-
-- OpenAIApi
-- Dall-E
-- import.meta.env
-- openai.createCompletion
-- openai.createImage
-- text-davinci-003
 
 ## Author
 
