@@ -4,15 +4,6 @@
 
 **Client:** Javascript, HTML, CSS, OPENAI, Vite
 
-## Overview
-
-- OpenAIApi
-- Dall-E
-- import.meta.env
-- openai.createCompletion
-- openai.createImage
-- text-davinci-003
-
 ### Links & Demo
 
 <p align="center">
@@ -65,6 +56,15 @@ export const process = {
 ```bash
 npm run dev
 ```
+
+## Overview
+
+- OpenAIApi
+- Dall-E
+- import.meta.env
+- openai.createCompletion
+- openai.createImage
+- text-davinci-003
 
 ## Author
 
