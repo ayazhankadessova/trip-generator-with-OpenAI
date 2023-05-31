@@ -1,7 +1,7 @@
 # Travel Destination Generator - Vite & OPENAI
 
 <h2 align="center">
- <img src="https://media.giphy.com/media/LSL5oY5sdt75zm8uk6/giphy.gif" width="60"> University BookShop Manager <img src="https://media.giphy.com/media/Sh7FMlRTsgB8lO8WKJ/giphy.gif" width="60">
+ <img src="https://media.giphy.com/media/6UmKlxuqegit0AdW2G/giphy.gif" width="100"> University BookShop Manager <img src="https://media.giphy.com/media/Sh7FMlRTsgB8lO8WKJ/giphy.gif" width="60">
 </h2>
 
 ## Tech Stack
