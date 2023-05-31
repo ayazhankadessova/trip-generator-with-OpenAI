@@ -2,7 +2,7 @@
 
 ## Tech Stack
 
-**Client:** OPENAI, Vite, Js, HTML, CSS
+**Client:** Javascript, HTML, CSS, OPENAI, Vite
 
 ## Overview
 
@@ -23,25 +23,44 @@
 
 ## Run Locally
 
-Clone the project
+1. Clone the project
 
 ```bash
   git clone https://github.com/ayazhankadessova/trip-generator-OpenAI.git
 ```
 
-Go to the project directory
+2. Go to the project directory
 
 ```bash
   cd ..trip-generator-OpenAI
 ```
 
-Install dependencies
+3. Install dependencies
 
 ```bash
 npm install
 ```
 
-Start the app
+4. Get & insert Api key
+
+I [cleaned my api key](https://til.simonwillison.net/git/rewrite-repo-remove-secrets), so you will have to **use your own.**
+
+### How to generate OpenAI Api Key?
+
+1. Go to OpenAI's Platform website at [platform.openai.com](https://platform.openai.com) and sign in with an OpenAI account.
+2. Click your profile icon at the top-right corner of the page and select ["View API Keys."](https://platform.openai.com/account/api-keys)
+3. Click "Create New Secret Key" to generate a new API key -> copy it
+4. Create `env.js` inside the project repository and copy and paste this, adding your api key.
+
+```
+export const process = {
+  env: {
+    OPENAI_API_KEY: 'YOUR API KEY',
+  },
+}
+```
+
+5. Start the app
 
 ```bash
 npm run dev
@@ -51,7 +70,6 @@ npm run dev
 
 - [@ayazhankadessova](https://github.com/ayazhankadessova)
 - [Linkedin](https://www.linkedin.com/in/ayazhankad/)
-
 
 ## About Me
 
