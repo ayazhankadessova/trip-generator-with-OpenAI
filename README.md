@@ -1,5 +1,5 @@
 <h2 align="center">
- <img src="https://media.giphy.com/media/fGL6oc26zsv6sA1sLx/giphy.gif" width="90">Travel Destination Generator - Vite & OpenAI <img src="images/OpenAIlogo.png" alt="OpenAI Logo" width="40">  <img src="https://media.giphy.com/media/fGL6oc26zsv6sA1sLx/giphy.gif" width="90">
+ <img src="https://media.giphy.com/media/fGL6oc26zsv6sA1sLx/giphy.gif" width="90">TripGenie Travel Destination Generator - Vite & OpenAI <img src="images/OpenAIlogo.png" alt="OpenAI Logo" width="40">  <img src="https://media.giphy.com/media/fGL6oc26zsv6sA1sLx/giphy.gif" width="90">
 </h2>
 
 `Javascript`, `HTML`, `CSS`, `OpenAI (openai.createCompletion, openai.createImage)`, `API`, `Vite`, `Dall-E`, `text-davinci-003`
