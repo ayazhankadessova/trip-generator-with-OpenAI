@@ -6,7 +6,7 @@
 
 ## 💡 Idea
 
-Can't decide where to go on your next adventure? Let TripGenie be your travel companion! 
+**Can't decide where to go on your next adventure?** Let TripGenie be your travel companion! 
 
 With just a few clicks, **answer** a few simple questions about your **preferences**, budget, and travel details. 
 
