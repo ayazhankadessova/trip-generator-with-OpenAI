@@ -15,11 +15,11 @@
 
 ### Links & Demo
 
-- [Github Repo](https://github.com/ayazhankadessova/trip-generator-OpenAI)
-
 <p align="center">
 <img src="https://github.com/ayazhankadessova/trip-generator-OpenAI/assets/86869537/8a93377f-859c-42be-b39e-3b13304e062f" width="800" alt="trip-generator-inf">
 </p>
+
+- [Github Repo](https://github.com/ayazhankadessova/trip-generator-with-OpenAI)
 
 ## Run Locally
 
