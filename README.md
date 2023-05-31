@@ -74,7 +74,7 @@ npm run dev
 
 ## About Me
 
-I'm aspiring software developer from Kazakhstn, studying in Hong Kong.
+I'm aspiring software developer from Kazakhstan, studying in Hong Kong.
 
 👩‍💻 I'm currently improving my skills in React.js :)
 
