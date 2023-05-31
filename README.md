@@ -4,6 +4,16 @@
 
 `Javascript`, `HTML`, `CSS`, `OpenAI (openai.createCompletion, openai.createImage)`, `API`, `Vite`, `Dall-E`, `text-davinci-003`
 
+## 💡 Idea
+
+Can't decide where to go on your next adventure? Let TripGenie be your travel companion! 
+
+With just a few clicks, **answer** a few simple questions about your **preferences**, budget, and travel details. 
+
+TripGenie, powered by **OpenAI**, will work its magic and generate `personalized trip itineraries`, `destination ideas`, and `breathtaking images`. 
+
+Say goodbye to decision fatigue and hello to hassle-free travel planning!
+
 ## Links & Demo
 
 <p align="center">
