@@ -92,3 +92,7 @@ I'm aspiring software developer from Kazakhstn, studying in Hong Kong.
 3. Goals:
 
 - Make better frontend
+
+4. Tools:
+
+- Gif creator: https://www.cockos.com/licecap/
