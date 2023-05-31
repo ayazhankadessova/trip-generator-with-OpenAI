@@ -27,13 +27,13 @@ Say goodbye to decision fatigue and hello to hassle-free travel planning!
 1. Clone the project
 
 ```bash
-  git clone https://github.com/ayazhankadessova/trip-generator-OpenAI.git
+  git clone https://github.com/ayazhankadessova/trip-generator-with-OpenAI.git
 ```
 
 2. Go to the project directory
 
 ```bash
-  cd ..trip-generator-OpenAI
+  cd trip-generator-with-OpenAI
 ```
 
 3. Install dependencies
