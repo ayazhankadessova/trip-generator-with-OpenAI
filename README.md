@@ -1,6 +1,7 @@
 <h2 align="center">
  <img src="https://media.giphy.com/media/fGL6oc26zsv6sA1sLx/giphy.gif" width="90"> Travel Destination Generator - Vite & OPENAI <img src="https://media.giphy.com/media/fGL6oc26zsv6sA1sLx/giphy.gif" width="90">
 </h2>
+
 `Javascript`, `HTML`, `CSS`, `OpenAI (openai.createCompletion, openai.createImage)`, `API`, `Vite`, `Dall-E`, `text-davinci-003`
 
 ## Links & Demo
