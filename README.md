@@ -4,6 +4,8 @@
 
 `Javascript`, `HTML`, `CSS`, `OpenAI (openai.createCompletion, openai.createImage)`, `API`, `Vite`, `Dall-E`, `text-davinci-003`
 
+## Check my App out [here](https://trip-generator-openai.netlify.app) !
+
 ## 💡 Idea
 
 **Can't decide where to go on your next adventure?** Let TripGenie be your travel companion! 
